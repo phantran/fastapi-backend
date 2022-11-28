@@ -1,4 +1,4 @@
-# MVP Match backend 1 assignment
+# MVP Match backend 1
 
 ## Requirements
 - Make sure Docker and Docker Compose are installed https://docs.docker.com/compose/install/
@@ -15,7 +15,7 @@ The stack includes:
 docker-compose up
 ```
 
-After running the command above successfully, the application will be available at 
+After running the command above is executed successfully, the API endpoints will be available at 
 ```commandline
 http://localhost:8000/api/v1
 ```

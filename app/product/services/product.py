@@ -99,6 +99,9 @@ class ProductService:
 
     @Transactional()
     async def buy(self, user_id: int, payload: BuyRequestSchema) -> dict:
+        """
+        Perform buying a product request from a buyer
+        """
         # Seller is not allowed to buy, check if user is a buyer
         user = await self._role_check(user_id, BUYER, SellerBuyException)
 

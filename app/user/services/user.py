@@ -10,7 +10,7 @@ from core.cache.redis import (
     add_to_active_sessions,
 )
 from core.consts import BUYER
-from core.db import Transactional, session, db_session
+from core.db import Transactional, db_session
 from core.exceptions import (
     PasswordDoesNotMatchException,
     DuplicateUsernameException,
