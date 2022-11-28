@@ -1,0 +1,2 @@
+BUYER = "buyer"
+SELLER = "seller"
