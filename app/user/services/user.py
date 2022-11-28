@@ -1,25 +1,25 @@
 from fastapi import HTTPException
-from sqlalchemy import select, delete
+from passlib import context
+from sqlalchemy import delete, select
 from starlette.status import HTTP_400_BAD_REQUEST
 
 from app.user.models import User
-from app.user.schemas.user import LoginResponseSchema, DepositRequestSchema
+from app.user.schemas.user import DepositRequestSchema, LoginResponseSchema
 from core.cache.redis import (
+    add_to_active_sessions,
     get_active_sessions,
     revoke_other_active_sessions,
-    add_to_active_sessions,
 )
 from core.consts import BUYER
 from core.db import Transactional, db_session
 from core.exceptions import (
-    PasswordDoesNotMatchException,
     DuplicateUsernameException,
-    UserNotFoundException,
     InvalidCredentialsException,
+    PasswordDoesNotMatchException,
     SellerDepositException,
+    UserNotFoundException,
 )
 from core.utils.token_helper import TokenHelper
-from passlib import context
 
 pwd_context = context.CryptContext(schemes=["bcrypt"], deprecated="auto")
 

@@ -1,6 +1,6 @@
 from .session import Base, db_session
 from .standalone_session import standalone_session
-from .transactional import Transactional, Propagation
+from .transactional import Propagation, Transactional
 
 __all__ = [
     "Base",

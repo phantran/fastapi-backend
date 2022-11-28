@@ -2,16 +2,16 @@ from fastapi import APIRouter, Depends
 from starlette.requests import Request
 
 from app.product.schemas.product import (
-    ProductResponseSchema,
+    BuyRequestSchema,
+    BuyResponseSchema,
     ProductCreateRequestSchema,
     ProductCreateResponseSchema,
     ProductDeleteRequestSchema,
+    ProductResponseSchema,
     ProductUpdateRequestSchema,
-    BuyRequestSchema,
-    BuyResponseSchema,
 )
 from app.product.services.product import ProductService
-from core.fastapi.dependencies import PermissionDependency, IsAuthenticated, AllowAll
+from core.fastapi.dependencies import AllowAll, IsAuthenticated, PermissionDependency
 
 product_router = APIRouter()
 

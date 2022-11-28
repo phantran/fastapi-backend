@@ -1,24 +1,20 @@
 from fastapi import APIRouter, Depends
 from starlette.requests import Request
 
-
 from app.user.schemas import (
-    ExceptionResponseSchema,
     CreateUserRequestSchema,
     CreateUserResponseSchema,
-    GetUserResponseSchema,
-    UpdatePasswordSchema,
-    UpdateProfileSchema,
     DepositRequestSchema,
+    ExceptionResponseSchema,
+    GetUserResponseSchema,
     LoginRequest,
     LoginResponseSchema,
+    UpdatePasswordSchema,
+    UpdateProfileSchema,
 )
 from app.user.services import UserService
 from core.cache.redis import revoke_other_active_sessions
-from core.fastapi.dependencies import (
-    PermissionDependency,
-    IsAuthenticated,
-)
+from core.fastapi.dependencies import IsAuthenticated, PermissionDependency
 
 user_router = APIRouter()
 

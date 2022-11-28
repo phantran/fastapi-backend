@@ -407,6 +407,20 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "isort"
+version = "5.10.1"
+description = "A Python utility / library to sort Python imports."
+category = "dev"
+optional = false
+python-versions = ">=3.6.1,<4.0"
+
+[package.extras]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
+requirements_deprecated_finder = ["pipreqs", "pip-api"]
+colors = ["colorama (>=0.4.3,<0.5.0)"]
+plugins = ["setuptools"]
+
+[[package]]
 name = "kombu"
 version = "5.2.4"
 description = "Messaging library for Python."
@@ -850,7 +864,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ba86620f1ec2d35bf7bf1d67877068518247dd3b4b90d592672770516f6b8974"
+content-hash = "7c98ebf20da3caed961cc8d9b186ed93046d5443d78bccae7d03144257dc83c5"
 
 [metadata.files]
 aiomysql = []
@@ -891,6 +905,7 @@ httpcore = []
 httpx = []
 idna = []
 iniconfig = []
+isort = []
 kombu = []
 mako = []
 markupsafe = [

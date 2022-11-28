@@ -1,6 +1,6 @@
 from typing import List
 
-from fastapi import FastAPI, Request, Depends
+from fastapi import Depends, FastAPI, Request
 from fastapi.middleware import Middleware
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -9,8 +9,8 @@ from api import router
 from core.exceptions import CustomException
 from core.fastapi.dependencies import Logging
 from core.fastapi.middlewares import (
-    AuthenticationMiddleware,
     AuthBackend,
+    AuthenticationMiddleware,
     SQLAlchemyMiddleware,
 )
 

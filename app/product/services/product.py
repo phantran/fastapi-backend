@@ -1,29 +1,28 @@
 from fastapi import HTTPException
-from sqlalchemy import select, delete
+from passlib import context
+from sqlalchemy import delete, select
 from starlette.status import HTTP_200_OK
 
 from app.product.models import Product
 from app.product.schemas.product import (
+    BuyRequestSchema,
     ProductCreateRequestSchema,
     ProductUpdateRequestSchema,
-    BuyRequestSchema,
 )
 from app.user.models import User
 from core.consts import BUYER, SELLER
 from core.db import Transactional, db_session
 from core.exceptions import (
-    UserNotFoundException,
-    ProductNotFoundException,
     ProductChangeNotAllowedException,
+    ProductNotFoundException,
+    UserNotFoundException,
 )
 from core.exceptions.product import (
-    SellerBuyException,
     BuyOwnProductException,
-    RoleNotAllowedException,
     InsufficientBalanceException,
+    RoleNotAllowedException,
+    SellerBuyException,
 )
-from passlib import context
-
 from core.utils.utils import get_change
 
 pwd_context = context.CryptContext(schemes=["bcrypt"], deprecated="auto")

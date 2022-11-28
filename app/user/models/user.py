@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Unicode, BigInteger, Float, Enum, ForeignKey, Integer
+from sqlalchemy import BigInteger, Column, Enum, Float, ForeignKey, Integer, Unicode
 from sqlalchemy.orm import relationship
+
+from app.product.models.product import Product  # noqa
 from core.db import Base
 from core.db.mixins import TimestampMixin
-from app.product.models.product import Product  # noqa
 
 
 class User(Base, TimestampMixin):

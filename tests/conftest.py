@@ -3,11 +3,11 @@ import os
 os.environ["ENV"] = "test"  # noqa
 
 import asyncio
-from _pytest.fixtures import fixture
 
-from app.server import app
+from _pytest.fixtures import fixture
 from httpx import AsyncClient
 
+from app.server import app
 from core.db import Base
 from core.db.session import engine
 from core.fastapi.middlewares import AuthBackend

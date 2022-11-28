@@ -10,8 +10,9 @@ from starlette.requests import HTTPConnection
 from starlette.status import HTTP_401_UNAUTHORIZED
 
 from core.config import config
-from ..schemas import CurrentUser
+
 from ...cache.redis import is_revoked_token
+from ..schemas import CurrentUser
 
 
 class AuthenticationMiddleware(BaseAuthenticationMiddleware):

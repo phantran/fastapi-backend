@@ -1,7 +1,7 @@
 from enum import Enum
 from functools import wraps
 
-from core.db import session, db_session
+from core.db import db_session, session
 
 
 class Propagation(Enum):
